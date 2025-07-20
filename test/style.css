@@ -1,0 +1,230 @@
+/* Google Fontsからレトロなフォントを読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@700&family=Lora&display=swap');
+
+/*
+  font-family: 'Lobster', cursive; -> ロゴ用
+  font-family: 'Playfair Display', serif; -> 大見出し用
+  font-family: 'Lora', serif; -> 本文用
+*/
+
+
+/* 基本設定 */
+body {
+    font-family: 'Lora', serif; /* 基本フォントをセリフ体に */
+    margin: 0;
+    color: #4a4a4a; /* 文字色を少し柔らかく */
+    background-color: #f5f2e8; /* 背景をクリーム色に */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 2px solid #dcd3c4;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Lobster', cursive; /* ロゴフォントを変更 */
+    font-size: 36px;
+    font-weight: normal;
+    color: #5d4037;
+    margin: 0;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #5d4037;
+    font-weight: bold;
+    font-family: 'Lora', serif;
+}
+
+/* ヒーローセクション */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop'); /* レトロな雰囲気の画像に変更 */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 45, 30, 0.5); /* ブラウン系のフィルターに変更 */
+    z-index: -1;
+}
+
+.hero h2, .hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif; /* 見出しフォントを変更 */
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+/* おすすめ商品 */
+.featured-products {
+    padding: 60px 0;
+}
+
+.featured-products h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* 見出しフォントを変更 */
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #5d4037;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #dcd3c4;
+    text-align: center;
+    padding: 30px 20px; /* 写真がない分、余白を調整 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.product-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-top: 0; /* 写真がないので上の余白を削除 */
+    margin-bottom: 10px;
+    color: #4a4a4a;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #8B4513; /* アクセントカラーをブラウン系に */
+    font-weight: bold;
+    font-family: 'Lora', serif;
+}
+
+/* フッター */
+footer {
+    background-color: #4a4a4a;
+    color: #f5f2e8;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+/* フッターのSNSリンク */
+.sns-links {
+    margin-bottom: 15px;
+}
+.sns-links a {
+    color: #f5f2e8;
+    font-size: 28px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.sns-links a:hover {
+    color: #dcd3c4; /* ホバー時の色を調整 */
+}
+
+/* 下層ページのCSS（一部色を調整） */
+.page-header {
+    background-color: #e9e3d6;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.page-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin: 0;
+    color: #5d4037;
+}
+
+.store-text h3 {
+    border-bottom: 2px solid #8B4513;
+}
+
+.submit-btn {
+    background-color: #8B4513;
+}
+.submit-btn:hover {
+    background-color: #5d4037;
+}
+
+/* style.css の末尾に追記 */
+
+/* 商品一覧ページの写真を見やすくするスタイル */
+
+/* カード全体のスタイル調整 */
+.product-list .product-card {
+    padding: 0; /* カード自体の余白をなくす */
+    overflow: hidden; /* 画像がはみ出ないようにする */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 画像を囲むコンテナのスタイル */
+.product-image-container {
+    width: 100%;
+    padding-top: 100%; /* これで正方形の領域を確保 */
+    position: relative;
+    background-color: #eee; /* 画像読み込み中の背景色 */
+}
+
+/* 画像自体のスタイル */
+.product-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を歪ませずにコンテナにフィットさせる */
+    transition: transform 0.4s ease; /* ズームの変化を滑らかに */
+}
+
+/* カードにホバーした時に画像をズームさせる */
+.product-card:hover .product-image-container img {
+    transform: scale(1.08);
+}
+
+/* 商品情報（テキスト部分）のスタイル */
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
