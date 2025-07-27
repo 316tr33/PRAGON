@@ -63,7 +63,10 @@ header nav a {
 
 /* ヒーローセクション */
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop'); /* レトロな雰囲気の画像に変更 */
+    /* ★★★ エラー修正箇所 ★★★ */
+    /* background-imageプロパティのurl()には、有効な画像のパスを指定してください */
+    /* 例: background-image: url('images/hero-image.jpg'); */
+    background-image: url('images/image-3.jpg'); /* レトロな雰囲気の画像に変更 */
     background-size: cover;
     background-position: center;
     color: #fff;
